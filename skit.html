@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proctor Monitoring System</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f6ff;
+            margin: 0;
+        }
+
+        .header {
+            background-color: #2f5bea;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .menu {
+            background-color: #ffffff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .menu button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: #2f5bea;
+            color: white;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .section {
+            display: none;
+            background: white;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Proctor Monitoring System</h1>
+</div>
+
+<!-- MENU OPTIONS -->
+<div class="menu">
+    <button onclick="showSection('details')">Proctee Details</button>
+    <button onclick="showSection('academic')">Academic Monitoring</button>
+    <button onclick="showSection('remarks')">Proctor Remarks</button>
+</div>
+
+<!-- CONTENT AREA -->
+<div class="content">
+
+    <!-- PROCTEE DETAILS -->
+    <div id="details" class="section">
+        <h2>Proctee Details</h2>
+        <table>
+            <tr><th>Name</th><td>Sri</td></tr>
+            <tr><th>USN</th><td>1XX22CS001</td></tr>
+            <tr><th>G-Suite ID</th><td>sri@college.edu</td></tr>
+            <tr><th>Department</th><td>CSE</td></tr>
+            <tr><th>Section</th><td>A</td></tr>
+        </table>
+    </div>
+
+    <!-- ACADEMIC MONITORING -->
+    <div id="academic" class="section">
+        <h2>Academic Monitoring</h2>
+        <ul>
+            <li>Attendance: Good</li>
+            <li>Internal Marks: 85%</li>
+            <li>Discipline: Satisfactory</li>
+        </ul>
+    </div>
+
+    <!-- PROCTOR REMARKS -->
+    <div id="remarks" class="section">
+        <h2>Proctor Remarks</h2>
+        <textarea rows="5" cols="50"></textarea><br><br>
+        <button>Submit</button>
+    </div>
+
+</div>
+
+<script>
+    function showSection(sectionId) {
+        var sections = document.getElementsByClassName("section");
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].style.display = "none";
+        }
+        document.getElementById(sectionId).style.display = "block";
+    }
+</script>
+
+</body>
+</html>
